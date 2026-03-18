@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: "20260318-001-customer-support"
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: chainlit run app.py --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
+      - key: ESCALATION_EMAIL
+        sync: false
+      - key: COMPANY_NAME
+        sync: false
+      - key: PERSONA_NAME
+        sync: false
+      - key: LANGUAGE
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
