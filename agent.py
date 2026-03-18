@@ -28,7 +28,7 @@ os.environ.setdefault("PERSONA_NAME", CFG.get("persona_name", ""))
 os.environ.setdefault("LANGUAGE", CFG.get("language", "en"))
 os.environ.setdefault("ESCALATION_EMAIL", CFG.get("escalation_email", ""))
 
-client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env automatically
 
 # ─── Tools (schema only — execution in tools/) ────────────────────────────────
 
